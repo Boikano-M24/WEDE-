@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enquiry | Akhona Teens Leadership Foundation</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+    <div class="wrap">
+        <a class="brand" href="index.html">
+            <img src="images/logo-square.jpg" alt="Akhona Teens Leadership Foundation logo">
+            <span class="brand-text">Akhona Teens<span>Leadership Foundation</span></span>
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="enquiry.html" aria-current="page">Enquiry</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- ============ PAGE HERO ============ -->
+<div class="page-hero">
+    <div class="wrap">
+        <span class="eyebrow" style="background: rgba(255,255,255,0.16); color: #ffffff;">Enquiry</span>
+        <h1>Volunteer, Mentor, Partner or Sponsor</h1>
+        <p class="lede">We're always looking for enthusiastic people who want to create change.</p>
+    </div>
+</div>
+
+<!-- ============ MAIN CONTENT ============ -->
+<main>
+    <section class="section">
+        <div class="wrap split">
+            <div class="split-media">
+                <img
+                    src="images/volunteers-needed-poster-480w.jpg"
+                    srcset="images/volunteers-needed-poster-480w.jpg 480w, images/volunteers-needed-poster-800w.jpg 800w, images/volunteers-needed-poster-1080w.jpg 1080w"
+                    sizes="(max-width: 900px) 100vw, 45vw"
+                    alt="Volunteers needed - poster calling for enthusiastic and friendly people who want to create change"
+                    style="border-radius: var(--radius); box-shadow: var(--shadow-card);">
+            </div>
+
+            <!-- Enquiry form: since this is an NPO, the form allows enquiries
+                 about volunteering, mentoring, partnering or sponsoring -->
+            <div>
+                <h2>Enquiry Form</h2>
+                <form action="#" method="post">
+
+                    <div class="form-row">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="enquiry-type">I am interested in</label>
+                        <select id="enquiry-type" name="enquiry-type">
+                            <option value="volunteer">Volunteering</option>
+                            <option value="mentor">Becoming a Mentor</option>
+                            <option value="partner">Partnering with Akhona Teens</option>
+                            <option value="sponsor">Becoming a Sponsor / Donor</option>
+                            <option value="general">General Enquiry</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="message">Tell us a bit more</label>
+                        <textarea id="message" name="message" placeholder="e.g. your availability, relevant experience, or how you'd like to support us"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn--primary">Submit Enquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional info on how enquiries are used -->
+    <section class="section section--alt">
+        <div class="wrap">
+            <h2>What Happens Next?</h2>
+            <p>Once you submit an enquiry, a member of our team will contact you within five working days to discuss the next steps, including screening and orientation for volunteer and mentor applicants.</p>
+        </div>
+    </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+    <div class="wrap">
+        <div class="footer-grid">
+            <div>
+                <h3>Akhona Teens Leadership Foundation</h3>
+                <p>Empowering teenagers through skills, confidence and opportunities to lead and create change.</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Get In Touch</h3>
+                <ul>
+                    <li>info@akhonateens.co.za</li>
+                    <li>011 972 4456</li>
+                    <li>Kempton Park, Gauteng</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; <span id="current-year">2026</span> Akhona Teens Leadership Foundation. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
