@@ -1,0 +1,7 @@
+# Akhona Teens Leadership Foundation: crawler instructions
+User-agent: *
+Allow: /
+Disallow: /404.html
+Disallow: /js/vendor/
+
+Sitemap: https://YOUR-USERNAME.github.io/akhona-teens-website/sitemap.xml
