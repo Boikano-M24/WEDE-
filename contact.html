@@ -1,29 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ZA">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Us | Akhona Teens Leadership Foundation</title>
+<title>Contact Akhona Teens | Kempton Park &amp; Hluvukani</title>
 
+<!-- SEO: description, keywords, robots, canonical -->
+<meta name="description" content="Contact Akhona Teens Leadership Foundation. Find our Kempton Park head office and Hluvukani Innovation Hub on an interactive map, or send us a message.">
+<meta name="keywords" content="contact Akhona Teens, Kempton Park NPO, Hluvukani Innovation Hub, youth foundation contact, map, directions, email">
+<meta name="author" content="Akhona Teens Leadership Foundation">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://YOUR-USERNAME.github.io/akhona-teens-website/contact.html">
+<meta name="theme-color" content="#4A2E83">
+
+<!-- Security: content-security policy + referrer policy -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://tile.openstreetmap.org https://*.tile.openstreetmap.org; connect-src 'self' https://jsonplaceholder.typicode.com https://formsubmit.co; object-src 'none'; base-uri 'self'; form-action 'self' mailto:">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<!-- Social sharing (Open Graph + Twitter cards) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Akhona Teens Leadership Foundation">
+<meta property="og:locale" content="en_ZA">
+<meta property="og:title" content="Contact Akhona Teens | Kempton Park &amp; Hluvukani">
+<meta property="og:description" content="Contact Akhona Teens Leadership Foundation. Find our Kempton Park head office and Hluvukani Innovation Hub on an interactive map, or send us a message.">
+<meta property="og:url" content="https://YOUR-USERNAME.github.io/akhona-teens-website/contact.html">
+<meta property="og:image" content="https://YOUR-USERNAME.github.io/akhona-teens-website/images/teen-leadership-coaching-banner-1200w.jpg">
+<meta property="og:image:alt" content="Akhona Teens banner: it&#x27;s time for the future to lead - leadership coaching for teens">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact Akhona Teens | Kempton Park &amp; Hluvukani">
+<meta name="twitter:description" content="Contact Akhona Teens Leadership Foundation. Find our Kempton Park head office and Hluvukani Innovation Hub on an interactive map, or send us a message.">
+<meta name="twitter:image" content="https://YOUR-USERNAME.github.io/akhona-teens-website/images/teen-leadership-coaching-banner-1200w.jpg">
+
+<!-- Icons -->
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<!-- Fonts + stylesheet -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/leaflet/leaflet.css">
+<!-- Adds a "js" class immediately so CSS can tell JavaScript is available -->
+<script src="js/init.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"NGO","name":"Akhona Teens Leadership Foundation","alternateName":"Akhona Teens","url":"https://YOUR-USERNAME.github.io/akhona-teens-website/","logo":"https://YOUR-USERNAME.github.io/akhona-teens-website/images/akhona-teens-leadership-foundation-logo.jpg","image":"https://YOUR-USERNAME.github.io/akhona-teens-website/images/teen-leadership-coaching-banner-1200w.jpg","description":"South African youth-development non-profit equipping teenagers aged 13-19 with leadership, financial literacy and entrepreneurship skills.","foundingDate":"2019","founder":{"@type":"Person","name":"Ruth Mthabine"},"email":"info@akhonateens.co.za","telephone":"+27119724456","address":{"@type":"PostalAddress","streetAddress":"14 Monument Road","addressLocality":"Kempton Park","addressRegion":"Gauteng","postalCode":"1619","addressCountry":"ZA"},"geo":{"@type":"GeoCoordinates","latitude":-26.1,"longitude":28.2333},"areaServed":[{"@type":"AdministrativeArea","name":"Gauteng"},{"@type":"AdministrativeArea","name":"Mpumalanga"}],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"16:30"}],"sameAs":["https://www.facebook.com/akhonateens","https://www.instagram.com/akhonateens","https://www.linkedin.com/company/akhona-teens-leadership-foundation","https://x.com/akhonateens"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://YOUR-USERNAME.github.io/akhona-teens-website/"},{"@type":"ListItem","position":2,"name":"Contact Us","item":"https://YOUR-USERNAME.github.io/akhona-teens-website/contact.html"}]}</script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to main content</a>
 
 <!-- ============ HEADER ============ -->
-<header class="site-header">
+<header class="site-header" id="top">
     <div class="wrap">
         <a class="brand" href="index.html">
-            <img src="images/logo-square.jpg" alt="Akhona Teens Leadership Foundation logo">
-            <span class="brand-text">Akhona Teens<span>Leadership Foundation</span></span>
+            <img src="images/akhona-teens-logo-header.jpg" width="104" height="48" alt="Akhona Teens Leadership Foundation logo">
         </a>
-        <nav class="site-nav" aria-label="Main navigation">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+            <span class="nav-toggle-bars" aria-hidden="true"></span>
+            <span>Menu</span>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Main navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="services.html">Services</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="enquiry.html">Enquiry</a></li>
                 <li><a href="contact.html" aria-current="page">Contact Us</a></li>
             </ul>
@@ -33,108 +76,197 @@
 
 <!-- ============ PAGE HERO ============ -->
 <div class="page-hero">
-    <div class="wrap">
-        <span class="eyebrow" style="background: rgba(255,255,255,0.16); color: #ffffff;">Contact Us</span>
-        <h1>Get In Touch</h1>
-        <p class="lede">We'd love to hear from you &mdash; reach us at either of our two locations.</p>
+    <div class="wrap hero-intro">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li><span aria-current="page">Contact Us</span></li>
+            </ol>
+        </nav>
+        <span class="eyebrow eyebrow--light">Contact Us</span>
+        <h1>Contact Akhona Teens</h1>
+        <p class="lede">Find us on the interactive map or send us a message. We would love to hear from you.</p>
     </div>
 </div>
 
 <!-- ============ MAIN CONTENT ============ -->
-<main>
+<main id="main" tabindex="-1">
 
-    <!-- Organisation contact details -->
-    <section class="section">
-        <div class="wrap grid grid--3">
-            <div class="card">
-                <h3>Email</h3>
-                <p>info@akhonateens.co.za<br>www.akhonateens.co.za</p>
-            </div>
-            <div class="card">
-                <h3>Telephone</h3>
-                <p>011 972 4456</p>
-            </div>
-            <div class="card">
-                <h3>Office Hours</h3>
-                <p>Monday&ndash;Friday<br>08:00&ndash;16:30</p>
+    <section class="section" aria-labelledby="details-heading">
+        <div class="wrap">
+            <h2 id="details-heading" class="visually-hidden">Contact details</h2>
+            <div class="grid grid--3">
+                <article class="card reveal">
+                    <h3>Email</h3>
+                    <p><a class="text-link" href="mailto:info@akhonateens.co.za">info@akhonateens.co.za</a><br>www.akhonateens.co.za</p>
+                </article>
+                <article class="card reveal d1">
+                    <h3>Telephone</h3>
+                    <p><a class="text-link" href="tel:+27119724456">011 972 4456</a></p>
+                </article>
+                <article class="card reveal d2">
+                    <h3>Office hours</h3>
+                    <p>Monday&ndash;Friday<br>08:00&ndash;16:30</p>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Two locations, each with its own embedded map, as required -->
-    <section class="section section--alt">
+    <section class="section section--alt" id="locations" aria-labelledby="locations-heading">
         <div class="wrap">
-            <h2>Our Locations</h2>
-            <div class="map-grid">
-
-                <div class="map-card">
-                    <iframe
-                        src="https://maps.google.com/maps?q=Kempton%20Park%2C%20Gauteng%2C%20South%20Africa&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                        title="Map showing Akhona Teens head office in Kempton Park, Gauteng"
-                        loading="lazy">
-                    </iframe>
-                    <div class="map-caption">
-                        <h3>Head Office &ndash; Kempton Park</h3>
-                        <p>14 Monument Road, Kempton Park, Gauteng, 1619</p>
+            <h2 id="locations-heading">Our locations</h2>
+            <p>Select a location to fly to it on the map, find your nearest site, or switch on the layers control to see the areas we serve.</p>
+            <div class="map-layout">
+                <div class="map-panel">
+                    <div class="location-list" role="group" aria-label="Locations">
+                    <div class="location-card">
+                        <button class="location-btn" type="button" data-location="kempton" aria-pressed="true">
+                            <strong>1. Head Office – Kempton Park</strong>
+                            <span>14 Monument Road, Kempton Park, Gauteng, 1619</span>
+                            <span>Monday–Friday, 08:00–16:30; workshops on Saturdays 09:00–13:00</span>
+                        </button>
+                        <div class="location-links">
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=-26.1,28.2333" target="_blank" rel="noopener noreferrer">Get directions<span class="visually-hidden"> to Head Office – Kempton Park</span></a>
+                            <a href="https://www.openstreetmap.org/?mlat=-26.1&mlon=28.2333#map=15/-26.1/28.2333" target="_blank" rel="noopener noreferrer">View on OpenStreetMap<span class="visually-hidden">: Head Office – Kempton Park</span></a>
+                        </div>
+                    </div>
+                    <div class="location-card">
+                        <button class="location-btn" type="button" data-location="hluvukani" aria-pressed="false">
+                            <strong>2. Hluvukani Innovation Hub</strong>
+                            <span>Hluvukani Community Centre, Hluvukani, Mpumalanga, 1363</span>
+                            <span>Monday–Friday, 14:00–17:30; Saturdays 09:00–13:00</span>
+                        </button>
+                        <div class="location-links">
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=-24.6456,31.3498" target="_blank" rel="noopener noreferrer">Get directions<span class="visually-hidden"> to Hluvukani Innovation Hub</span></a>
+                            <a href="https://www.openstreetmap.org/?mlat=-24.6456&mlon=31.3498#map=15/-24.6456/31.3498" target="_blank" rel="noopener noreferrer">View on OpenStreetMap<span class="visually-hidden">: Hluvukani Innovation Hub</span></a>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="map-tools">
+                        <button class="btn btn--outline btn--small" type="button" id="map-all" data-js-only>Show both locations</button>
+                        <button class="btn btn--dark btn--small" type="button" id="map-nearest" data-js-only>Find my nearest</button>
+                    </div>
+                    <p class="map-status" id="map-status" role="status" aria-live="polite"></p>
+                </div>
+                <div id="map" role="region" aria-label="Interactive map showing the Kempton Park head office and the Hluvukani Innovation Hub" tabindex="0">
+                    <div class="map-fallback">
+                        <p>The interactive map needs JavaScript. Our locations:</p>
+                        <ul class="bullets"><li><strong>Head Office – Kempton Park</strong>: 14 Monument Road, Kempton Park, Gauteng, 1619</li><li><strong>Hluvukani Innovation Hub</strong>: Hluvukani Community Centre, Hluvukani, Mpumalanga, 1363</li></ul>
                     </div>
                 </div>
-
-                <div class="map-card">
-                    <iframe
-                        src="https://maps.google.com/maps?q=Hluvukani%2C%20Mpumalanga%2C%20South%20Africa&t=&z=12&ie=UTF8&iwloc=&output=embed"
-                        title="Map showing the Hluvukani Innovation Hub in Mpumalanga"
-                        loading="lazy">
-                    </iframe>
-                    <div class="map-caption">
-                        <h3>Hluvukani Innovation Hub</h3>
-                        <p>Hluvukani Community Centre, Hluvukani, Mpumalanga, 1363</p>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Social media -->
-    <section class="section">
-        <div class="wrap">
-            <h2>Social Media</h2>
-            <ul style="display:flex; flex-wrap:wrap; gap: var(--space-md);">
-                <li>Facebook: facebook.com/akhonateens</li>
-                <li>Instagram: @akhonateens</li>
-                <li>X (Twitter): @akhonateens</li>
-                <li>LinkedIn: Akhona Teens Leadership Foundation</li>
-            </ul>
-        </div>
-    </section>
+    <section class="section" aria-labelledby="contact-form-heading">
+        <div class="wrap split split--form">
+            <div>
+            <form id="contact-form" class="form-card" action="mailto:info@akhonateens.co.za" method="post" enctype="text/plain" novalidate aria-labelledby="contact-form-heading">
+                <h2 id="contact-form-heading">Send us a message</h2>
+                <p class="form-note">Fields marked <span class="req" aria-hidden="true">*</span><span class="visually-hidden">with an asterisk</span> are required. Your message is compiled into an email addressed to <strong>info@akhonateens.co.za</strong> that you can send from your own email app.</p>
 
-    <!-- General contact form -->
-    <section class="section section--alt">
-        <div class="wrap">
-            <h2>Send Us a Message</h2>
-            <form action="#" method="post">
-                <div class="form-row">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required>
+                <div id="contact-summary" class="form-summary" role="alert" tabindex="-1" hidden></div>
+
+                <div class="form-grid">
+                <div class="field" data-field="name">
+                    <label for="name">Full name <span class="req" aria-hidden="true">*</span></label>
+                    <input type="text" id="name" name="name" required autocomplete="name" aria-describedby="name-error" minlength="2" maxlength="60">
+                    
+                    <p class="field-error" id="name-error" aria-live="polite"></p>
+                </div>
+                <div class="field" data-field="email">
+                    <label for="email">Email address <span class="req" aria-hidden="true">*</span></label>
+                    <input type="email" id="email" name="email" required autocomplete="email" aria-describedby="email-error" maxlength="120">
+                    
+                    <p class="field-error" id="email-error" aria-live="polite"></p>
+                </div>
+                <div class="field" data-field="phone">
+                    <label for="phone">Phone number</label>
+                    <input type="tel" id="phone" name="phone" autocomplete="tel" aria-describedby="phone-hint phone-error" inputmode="tel" maxlength="16">
+                    <span class="hint" id="phone-hint">Required only if you choose phone or WhatsApp below.</span>
+                    <p class="field-error" id="phone-error" aria-live="polite"></p>
+                </div>
+                <div class="field" data-field="messageType">
+                    <label for="messageType">Type of message <span class="req" aria-hidden="true">*</span></label>
+                    <select id="messageType" name="messageType" required aria-describedby="messageType-error"><option value="">Please choose…</option><option value="general">General question</option><option value="programme">Question about a programme</option><option value="media">Media enquiry</option><option value="feedback">Feedback or compliment</option><option value="complaint">Complaint</option><option value="other">Something else</option></select>
+                    
+                    <p class="field-error" id="messageType-error" aria-live="polite"></p>
+                </div>
+                <div class="field field--full" data-field="contactMethod" data-group>
+                    <fieldset class="fieldset" aria-describedby="contactMethod-error">
+                        <legend>How should we reply? <span class="req" aria-hidden="true">*</span></legend>
+                        <div class="checks">
+                        <label class="check" for="contactMethod-0">
+                            <input type="radio" id="contactMethod-0" name="contactMethod" value="email">
+                            <span>Email</span>
+                        </label>
+                        <label class="check" for="contactMethod-1">
+                            <input type="radio" id="contactMethod-1" name="contactMethod" value="phone">
+                            <span>Phone call</span>
+                        </label>
+                        <label class="check" for="contactMethod-2">
+                            <input type="radio" id="contactMethod-2" name="contactMethod" value="whatsapp">
+                            <span>WhatsApp</span>
+                        </label>
+                        </div>
+                        
+                    </fieldset>
+                    <p class="field-error" id="contactMethod-error" aria-live="polite"></p>
+                </div>
+                <div class="field" data-field="bestTime">
+                    <label for="bestTime">Best time to reach you</label>
+                    <select id="bestTime" name="bestTime" aria-describedby="bestTime-error"><option value="">Please choose…</option><option value="morning">Morning (08:00–12:00)</option><option value="afternoon">Afternoon (12:00–16:30)</option><option value="any">Any time</option></select>
+                    
+                    <p class="field-error" id="bestTime-error" aria-live="polite"></p>
+                </div>
+                <div class="field field--full" data-field="subject">
+                    <label for="subject">Subject <span class="req" aria-hidden="true">*</span></label>
+                    <input type="text" id="subject" name="subject" required aria-describedby="subject-error" minlength="5" maxlength="100">
+                    
+                    <p class="field-error" id="subject-error" aria-live="polite"></p>
+                </div>
+                <div class="field field--full" data-field="message">
+                    <label for="message">Message <span class="req" aria-hidden="true">*</span></label>
+                    <textarea id="message" name="message" rows="6" maxlength="1000" minlength="20" required aria-describedby="message-hint message-error"></textarea>
+                    <span class="hint" id="message-hint">Between 20 and 1000 characters.</span>
+                    <div class="counter" data-counter-for="message" data-max="1000">0 / 1000</div>
+                    <p class="field-error" id="message-error" aria-live="polite"></p>
+                </div>
+                <div class="field field--full" data-field="consent">
+                    <label class="check" for="consent">
+                        <input type="checkbox" id="consent" name="consent" value="yes" aria-describedby="consent-error">
+                        <span>I agree that Akhona Teens may use these details to reply to me (POPIA). <span class='req' aria-hidden='true'>*</span></span>
+                    </label>
+                    <p class="field-error" id="consent-error" aria-live="polite"></p>
+                </div>
                 </div>
 
-                <div class="form-row">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
+                <div class="hp" aria-hidden="true">
+                    <label for="website">Leave this field empty</label>
+                    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
                 </div>
 
-                <div class="form-row">
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" name="subject">
-                </div>
-
-                <div class="form-row">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message"></textarea>
-                </div>
-
-                <button type="submit" class="btn btn--primary">Send Message</button>
+                <button class="btn btn--primary" type="submit" id="contact-submit">Prepare my email</button>
+                <p class="form-status" id="contact-status" role="status" aria-live="polite"></p>
             </form>
+
+            <!-- Shown after validation: the compiled email, ready to send -->
+            <div id="contact-response" class="response-card" tabindex="-1" hidden></div>
+            </div>
+            <aside class="reveal" aria-label="Other ways to reach us">
+                <div class="card">
+                    <h3>Follow us</h3>
+                    <ul class="link-list">
+                        <li><a href="https://www.facebook.com/akhonateens" target="_blank" rel="noopener noreferrer">Facebook</a></li><li><a href="https://www.instagram.com/akhonateens" target="_blank" rel="noopener noreferrer">Instagram</a></li><li><a href="https://www.linkedin.com/company/akhona-teens-leadership-foundation" target="_blank" rel="noopener noreferrer">LinkedIn</a></li><li><a href="https://x.com/akhonateens" target="_blank" rel="noopener noreferrer">X (Twitter)</a></li>
+                    </ul>
+                    <h3>Looking for something specific?</h3>
+                    <ul class="link-list">
+                        <li><a href="enquiry.html?type=volunteer">Volunteer enquiries</a></li>
+                        <li><a href="enquiry.html?type=sponsor">Sponsorship &amp; donations</a></li>
+                        <li><a href="enquiry.html?type=enrolment">Enrol a teenager</a></li>
+                    </ul>
+                </div>
+            </aside>
         </div>
     </section>
 
@@ -145,32 +277,59 @@
     <div class="wrap">
         <div class="footer-grid">
             <div>
-                <h3>Akhona Teens Leadership Foundation</h3>
-                <p>Empowering teenagers through skills, confidence and opportunities to lead and create change.</p>
+                <h2>Akhona Teens Leadership Foundation</h2>
+                <p>Equipping teenagers with the personal, leadership, financial and entrepreneurial skills to build meaningful futures.</p>
+                <p><a href="mailto:info@akhonateens.co.za">info@akhonateens.co.za</a><br><a href="tel:+27119724456">011 972 4456</a></p>
             </div>
             <div>
-                <h3>Quick Links</h3>
+                <h3>Explore</h3>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="enquiry.html">Enquiry</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Programmes &amp; Services</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="gallery.html">Photo Gallery</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
                 </ul>
             </div>
             <div>
-                <h3>Get In Touch</h3>
+                <h3>Get involved</h3>
                 <ul>
-                    <li>info@akhonateens.co.za</li>
-                    <li>011 972 4456</li>
-                    <li>Kempton Park, Gauteng</li>
+                    <li><a href="enquiry.html?type=volunteer">Volunteer</a></li>
+                    <li><a href="enquiry.html?type=mentor">Become a mentor</a></li>
+                    <li><a href="enquiry.html?type=sponsor">Sponsor or donate</a></li>
+                    <li><a href="enquiry.html?type=partner">Partner with us</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Follow &amp; share</h3>
+                <ul>
+                    <li><a href="https://www.facebook.com/akhonateens" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/akhonateens" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://www.linkedin.com/company/akhona-teens-leadership-foundation" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                    <li><a href="https://x.com/akhonateens" target="_blank" rel="noopener noreferrer">X (Twitter)</a></li>
+                </ul>
+                <p class="visually-hidden" id="share-label">Share this website</p>
+                <ul aria-labelledby="share-label">
+                    <li><a data-share="whatsapp" href="https://wa.me/?text=Check%20out%20Akhona%20Teens%20Leadership%20Foundation%20-%20free%20teen%20leadership%20programmes%20in%20Gauteng%20%26%20Mpumalanga%20https%3A//YOUR-USERNAME.github.io/akhona-teens-website/" target="_blank" rel="noopener noreferrer">Share on WhatsApp</a></li>
+                    <li><a data-share="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A//YOUR-USERNAME.github.io/akhona-teens-website/" target="_blank" rel="noopener noreferrer">Share on Facebook</a></li>
+                    <li><a data-share="x" href="https://twitter.com/intent/tweet?url=https%3A//YOUR-USERNAME.github.io/akhona-teens-website/&amp;text=Check%20out%20Akhona%20Teens%20Leadership%20Foundation%20-%20free%20teen%20leadership%20programmes%20in%20Gauteng%20%26%20Mpumalanga" target="_blank" rel="noopener noreferrer">Share on X</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; <span id="current-year">2026</span> Akhona Teens Leadership Foundation. All rights reserved.
+            &copy; <span id="current-year">2026</span> Akhona Teens Leadership Foundation. Registered non-profit organisation, South Africa.
         </div>
     </div>
 </footer>
 
-<script src="js/script.js"></script>
+<button class="back-to-top" type="button" aria-label="Back to top">&uarr;</button>
+<script src="js/config.js" defer></script>
+<script src="js/data.js" defer></script>
+<script src="js/main.js" defer></script>
+<script src="js/vendor/leaflet.js" defer></script>
+<script src="js/map.js" defer></script>
+<script src="js/forms.js" defer></script>
+<script src="js/contact.js" defer></script>
 </body>
 </html>

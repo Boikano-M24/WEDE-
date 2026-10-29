@@ -1,138 +1,359 @@
-# Akhona Teens Leadership Foundation — Website
+# Akhona Teens Leadership Foundation: Website
 
-## Project Overview
-This is an HTML/CSS prototype website built for **Akhona Teens Leadership Foundation**, a South African youth-development non-profit organisation. The project was completed in two phases:
+A multi-page website for **Akhona Teens Leadership Foundation**, a South African youth-development non-profit that equips teenagers (13–19) with leadership, financial-literacy and entrepreneurship skills in Gauteng and Mpumalanga.
 
-- **Part 1 — Content & Structure:** basic page structure, content and images for each page (not yet responsive).
-- **Part 2 — Designing the Visuals:** an external stylesheet applying layout, typography and colour; a fully responsive design across desktop, tablet and mobile; and improved user experience (readability, navigation, accessibility).
+| | |
+|---|---|
 
-## Organisation Chosen
-**Akhona Teens Leadership Foundation** — a youth-development NPO that equips teenagers (aged 13–19) with personal development, leadership, financial literacy and entrepreneurship skills.
+| **Built with** | HTML5, CSS3 (Grid, Flexbox), vanilla JavaScript (no framework), Leaflet 1.9.4 |
 
-## Folder / File Structure
+The project was built in three parts. This README documents all of them; Part 3 is described in most detail.
+
+| Part | Focus |
+|---|---|
+| 1 | Content research, page structure, images |
+| 2 | CSS styling and responsive design |
+| 3 | JavaScript functionality, SEO, validated forms, deployment |
+
+All changes, including corrections made to Part 2, are recorded in [`CHANGELOG.md`](CHANGELOG.md).
+
+---
+
+## Contents
+1. [Pages and sitemap](#pages-and-sitemap)
+2. [Folder structure](#folder-structure)
+3. [Part 3 features](#part-3-features)
+4. [Forms](#forms)
+5. [SEO](#seo)
+6. [Security](#security)
+7. [Responsive design and screenshot evidence](#responsive-design-and-screenshot-evidence)
+8. [Testing](#testing)
+9. [Setup and configuration](#setup-and-configuration)
+10. [Deployment](#deployment)
+11. [Git workflow](#git-workflow)
+12. [Content sources](#content-sources)
+13. [References](#references)
+
+---
+
+## Pages and sitemap
+
+```
+index.html (Home)
+├── about.html      About Us: story, timeline, tabs, team, modals
+├── services.html   Services: searchable / sortable programme list
+├── events.html     Events: filterable list, add to calendar
+├── gallery.html    Gallery: filters + lightbox
+├── enquiry.html    Enquiry: adaptive form with instant response, FAQ accordion
+├── contact.html    Contact: interactive map, validated message form
+├── sitemap.html    Visual sitemap
+└── 404.html        Page-not-found page
+```
+
+Every page is one click from the home page and shares the same header navigation and footer. The five pages required by the brief are `index`, `about`, `services`, `enquiry` and `contact`; `events`, `gallery`, `sitemap` and `404` are extra pages documented here and in the changelog.
+
+## Folder structure
+
 ```
 AkhonaTeens_Website/
-├── index.html              (Homepage)
-├── about.html              (About Us)
-├── services.html           (Services / Programmes)
-├── enquiry.html            (Volunteer / Mentor / Partner / Sponsor enquiry form)
-├── contact.html            (Contact details, two location maps, contact form)
-├── sitemap.html            (Visual sitemap / supporting page)
+├── index.html  about.html  services.html  events.html  gallery.html
+├── enquiry.html  contact.html  sitemap.html  404.html
+├── robots.txt  sitemap.xml  _headers  .nojekyll
+├── favicon.ico  favicon.png  apple-touch-icon.png
 ├── css/
-│   └── style.css           (Single external stylesheet, shared by every page)
+│   ├── style.css              single shared stylesheet (reset, tokens, components, breakpoints)
+│   └── leaflet/               Leaflet stylesheet + marker images (BSD-2 licence)
 ├── js/
-│   └── script.js           (Footer year + active nav-link highlighting)
-├── images/
-│   ├── logo-square.jpg
-│   ├── logo-wide-banner.jpg
-│   ├── hero-banner.jpg (+ -480w / -800w / -1200w responsive variants)
-│   ├── team-group-photo.jpg (+ responsive variants)
-│   ├── leadership-workshop.jpg (+ responsive variants)
-│   ├── community-outreach.jpg
-│   ├── volunteers-needed-poster.jpg (+ responsive variants)
-│   ├── dignity-pack-supplies.jpg
-│   └── screenshots/         (Responsive testing evidence — see Part 2 below)
+│   ├── init.js                adds a "js" class so CSS knows JavaScript is available
+│   ├── config.js              form settings (recipient email, AJAX endpoint, sponsorship costs)
+│   ├── data.js                programmes, events and locations used by the dynamic pages
+│   ├── main.js                nav, scroll reveal, counters, tabs, accordion, modals, share links
+│   ├── services.js            programme search / filter / sort
+│   ├── events.js              events list, pagination, .ics calendar export
+│   ├── gallery.js             gallery filter + lightbox
+│   ├── map.js                 Leaflet map, nearest-location finder
+│   ├── forms.js               validation engine, AJAX helper, counters
+│   ├── enquiry.js             enquiry form logic + personalised responses
+│   ├── contact.js             contact form logic + compiled email
+│   └── vendor/                leaflet.js (kept local) + licence
+├── images/                    descriptive file names, JPEG + WebP at 480/800/1200px
+│   └── screenshots/
+│       ├── responsive/        every page at desktop / tablet / mobile
+│       └── features/          interactive features in action
 ├── README.md
 └── CHANGELOG.md
 ```
 
-## Sitemap
-See `sitemap.html` for a visual representation of the site's hierarchy. In summary:
-
-- **index.html** (Home) links to → about.html, services.html, enquiry.html, contact.html
-- All pages share the same navigation menu and footer, so every page is reachable from every other page.
-- `sitemap.html` is a supporting page (not part of the main navigation menu) that documents the overall structure.
-
-## Pages and Content
-
-| Page | Purpose |
-|---|---|
-| `index.html` | Hero image, brief introduction, impact stats, and calls to action |
-| `about.html` | Organisation history, founder profile, team members, mission and vision |
-| `services.html` | Detailed information on programmes: Personal Development, Leadership Development, Financial Literacy, Teen Entrepreneurship, and community initiatives |
-| `enquiry.html` | Enquiry form for volunteering, mentoring, partnering or sponsoring (this NPO's equivalent of a product/service enquiry) |
-| `contact.html` | Contact details, two embedded maps (Kempton Park head office and Hluvukani Innovation Hub), and a general contact form |
-| `sitemap.html` | Visual overview of the site structure |
-
-## Content Sources
-1. **Organisation's own material** — logos, campaign posters and the homepage hero banner were sourced from the `Research` folder supplied for this project (originally gathered from the organisation's public social media presence).
-2. **Social media** — photographs of programme activities, the team, and campaign material (e.g. the "Volunteers Needed" poster and dignity-pack campaign photos) were sourced from the organisation's public social media posts, saved in the `Research` folder.
-3. **Original content** — page copy (mission and vision statements, programme descriptions, team member profiles, contact details, and campaign summaries) was written specifically for this website prototype based on the organisation's publicly known focus areas and campaigns.
+Folders and files use lowercase, hyphenated, descriptive names throughout.
 
 ---
 
-## Part 2: Designing the Visuals
+## Part 3 features
 
-### 1. CSS Styling
-- A single **external stylesheet** (`css/style.css`) is linked from every page, using a consistent naming convention.
-- A **CSS reset** (`*`, `box-sizing`, margin/padding zeroing) establishes consistent cross-browser behaviour before custom styles apply.
-- A **base style** sets default font family, font size, colour scheme and spacing via CSS custom properties (design tokens) defined once in `:root`.
-- **Typography**: two Google Fonts are used — `Sora` for headings (bold, geometric, echoes the brand wordmark) and `Source Sans 3` for body text — set with a deliberate type scale (`--step-0` to `--step-4`), consistent `font-weight`, `line-height` and `letter-spacing`.
-- **Colour palette** is drawn directly from the organisation's own logo and campaign material rather than a generic template palette:
+| Requirement | Where | How it works |
+|---|---|---|
+| **Accordion** | `enquiry.html` (FAQ) | Buttons with `aria-expanded`; panels animate with CSS grid rows; arrow keys move between questions. |
+| **Tabs** | `about.html` | WAI-ARIA tab pattern with arrow keys, Home/End and deep links (`about.html#panel-values`). |
+| **Modals** | `about.html`, `services.html`, `events.html` | Native `<dialog>`: focus trapped, Escape closes, focus returns to the trigger. |
+| **Interactive map** | `contact.html` | Leaflet + OpenStreetMap; two markers with popups, fly-to cards, "Show both", service-area layer toggle, **Find my nearest** (geolocation + haversine distance). |
+| **Animations and transitions** | all pages | Scroll-reveal (IntersectionObserver), animated counters, hover lifts, modal/tab/accordion transitions, sticky-header shadow. Disabled for `prefers-reduced-motion`. |
+| **Advanced DOM manipulation** | `services.js`, `events.js`, `forms.js` … | Cards, popups, error messages and responses are created with `createElement`/`textContent`; no `innerHTML`. |
+| **Gallery with lightbox** | `gallery.html` | Filter chips; lightbox with buttons, ← → keys, swipe, zoom, counter, preloading, focus return. |
+| **Dynamic content** | `services.html`, `events.html`, home page | Rendered from `js/data.js`; "upcoming" is calculated from today's date. |
+| **Search, filter and sort** | `services.html`, `events.html` | Multi-word search with highlighting, chips, venue/type filters, 5 and 3 sort orders, result count, empty state, URL state. |
+| **Add to calendar** | `events.html` | Generates a standards-compliant `.ics` file in the browser. |
 
-  | Token | Hex | Use |
-  |---|---|---|
-  | `--color-teal` | `#1C9E8E` | Primary brand colour, links, accents |
-  | `--color-purple` | `#4A2E83` | Headings, hero gradient |
-  | `--color-amber` | `#F2A93B` | Buttons / calls to action |
-  | `--color-ink` | `#211F2B` | Body text, footer background |
-  | `--color-paper` | `#FAF8F5` | Page background |
+Everything is a progressive enhancement: with JavaScript switched off, content stays readable (tabs and FAQ show all text, `<noscript>` lists the programmes and events, the map area lists the addresses, and the forms remain usable).
 
-- **Layout structure** uses both **CSS Grid** (card grids for programmes/team/community initiatives, the two-column map grid) and **Flexbox** (header bar, stat row, nav menu, footer links) — see `display: grid`, `grid-template-columns`, `display: flex`, `justify-content`, `align-items` throughout `style.css`.
-- **Visual styling**: `border-radius`, `box-shadow`, gradients (`linear-gradient`) on the page hero, and `border-left` accent stripes on stat cards.
-- **Pseudo-classes**: `:hover`, `:focus-visible` and `:active` are used on nav links, buttons, cards and form fields to create interactive, accessible states (e.g. buttons lift on hover, form fields get a visible teal focus ring, nav links get an amber underline on hover).
+### Screenshots of the features
 
-### 2. Responsive Design
-- **Breakpoints**: two media queries — `max-width: 900px` (tablet) and `max-width: 600px` (mobile) — adapt the layout, typography scale and navigation.
-- **Layout adjustments**: two-column "split" sections (hero text/image, campaign features) collapse to a single column on tablet; three-column card grids (`grid--3`) become two columns on tablet and one column on mobile; the two-location map grid stacks vertically below 900px.
-- **Navigation adjustments**: the horizontal nav menu becomes a full-width, stacked vertical menu on mobile screens.
-- **Typography adjustments**: heading sizes (`--step-3`, `--step-4`, etc.) scale down at each breakpoint so large headlines don't overwhelm small screens.
-- **Relative units**: spacing and type use `rem`/`em`, grid columns use `fr` and `%`-based `minmax()`, so the layout is not pinned to fixed pixel widths.
-- **Responsive images**: the homepage hero image and several content photos use `<picture>`/`srcset`/`sizes` with three generated resolutions (480w / 800w / 1200w) so smaller screens download smaller files instead of the full-size original.
+| | | |
+|---|---|---|
+| ![Search with highlighting](images/screenshots/features/01-services-search-highlight.jpg) | ![Programme details modal](images/screenshots/features/02-programme-details-modal.jpg) | ![About tabs](images/screenshots/features/03-about-tabs.jpg) |
+| Services search (highlighted matches) | Details modal | Tabs |
+| ![FAQ accordion](images/screenshots/features/04-faq-accordion.jpg) | ![Gallery lightbox](images/screenshots/features/05-gallery-lightbox.jpg) | ![Interactive map](images/screenshots/features/06-interactive-map.jpg) |
+| FAQ accordion | Gallery lightbox | Interactive map with popup |
+| ![Events search](images/screenshots/features/11-events-search.jpg) | ![Mobile menu](images/screenshots/features/12-mobile-hamburger-menu.jpg) | |
+| Events search | Mobile hamburger menu | |
 
-### 3. Test and Iterate — Screenshot Evidence
-The website was tested at three screen sizes using real browser rendering (a headless Chromium instance) rather than only resizing a window by eye, to get pixel-accurate evidence:
+> The map screenshot shows a plain background because the tool used to capture it blocks the OpenStreetMap tile server. On a normal internet connection the standard map tiles load.
 
-| Breakpoint | Viewport used |
+---
+
+## Forms
+
+The two forms differ in purpose, as the brief requires.
+
+### `enquiry.html`: enquire about services, volunteering or sponsoring
+1. Choose what you want to do: **enrol a teenager, volunteer, become a mentor, sponsor/donate, or partner**. Only the relevant fields appear.
+2. Validation (client-side JavaScript on top of HTML5 attributes):
+   - required fields, name pattern, email format, **South African phone formats**
+   - teenager's **date of birth → age must be 13–19**; guardian name and consent appear and become required only for under-18s
+   - cross-field rule: programme and venue must match (the Academy runs in Kempton Park only)
+   - start date between today and 12 months ahead; sponsorship amount a whole number from R50 to R1,000,000; character limits
+3. Errors appear beside each field (with `aria-invalid` and `aria-describedby`) and in a summary whose links jump to the field.
+4. After a valid submit: a "processing" state, an **AJAX** request, then a **personalised response**:
+
+| Enquiry | The response states |
 |---|---|
-| Desktop | 1440 × 900 |
-| Tablet | 768 × 1024 |
-| Mobile | 375 × 812 |
+| Enrol | programme **cost** (free), **next start date**, registration deadline, venue, what to bring, guardian consent note |
+| Volunteer | matching **time slots**, estimated hours a month, the **next orientation day on or after the chosen start date**, screening timeline, cost |
+| Mentor | mentoring commitment, next orientation, matching process |
+| Sponsor | **impact of the gift** (e.g. R500/month = 5 dignity packs a month), annual total, sponsor level, Section 18A eligibility, payment timeline |
+| Partner | three first-call **availability** slots, response timeline |
 
-Screenshots for the homepage, Services page and Contact page are saved in `images/screenshots/`:
+Each response has a reference number and a pre-filled "Email this enquiry" button.
 
-**Homepage (`index.html`)**
-- Desktop: `screenshots/index-desktop.png`
-- Tablet: `screenshots/index-tablet.png`
-- Mobile: `screenshots/index-mobile.png`
+| Validation errors | Personalised response | Sponsorship response |
+|---|---|---|
+| ![Validation](images/screenshots/features/07-enquiry-validation-errors.jpg) | ![Volunteer response](images/screenshots/features/08-enquiry-personalised-response.jpg) | ![Sponsor response](images/screenshots/features/09-sponsorship-response.jpg) |
 
-**Services (`services.html`)** — demonstrates the 3-column → 2-column → 1-column card grid
-- Desktop: `screenshots/services-desktop.png`
-- Tablet: `screenshots/services-tablet.png`
-- Mobile: `screenshots/services-mobile.png`
+### `contact.html`: general message
+Collects contact details, message type, preferred reply method, best time, subject and message (20–1000 characters, live counter). A phone number becomes required if the visitor asks for a phone or WhatsApp reply. After validation the details are **compiled into an email** (recipient, subject and body) shown for review. The visitor can **open it in their email app** (a `mailto:` link addressed to the recipient in `js/config.js`), **copy the text**, or **edit the message**.
 
-**Contact (`contact.html`)** — demonstrates the two-location map grid and form collapsing
-- Desktop: `screenshots/contact-desktop.png`
-- Tablet: `screenshots/contact-tablet.png`
-- Mobile: `screenshots/contact-mobile.png`
+![Compiled email](images/screenshots/features/10-contact-compiled-email.jpg)
 
-> **Note on the screenshots:** these were captured in a sandboxed development environment with restricted internet access. As a result, two things don't render in the screenshots but **will render normally** when the site is opened with a normal internet connection: (1) the Google Fonts (Sora / Source Sans 3) fall back to the system sans-serif font, and (2) the two embedded Google Maps `iframe`s show a network message instead of the live map tiles. The HTML/CSS itself is unaffected — layout, grid/flexbox behaviour, and breakpoints all render and reflow correctly, which is what this testing step is verifying.
+### Both forms
+- The `<form action>` attribute holds a `mailto:` address as the no-JavaScript fallback.
+- **AJAX:** data is sent with `fetch()` as JSON, with a timeout and clear success or failure feedback. The site never gets stuck: if the request fails the visitor is told and can still send the compiled email.
+- Honeypot field for bots; submit button disabled while sending; consent (POPIA) checkbox.
 
-Across all three breakpoints, the header/navigation, hero, stat row, card grids, image/text split sections, map grid, forms and footer all reflow correctly with no horizontal scrollbars or overlapping content.
+> **Important:** a static website cannot send email by itself, so the visitor's own email app performs the final send. The default AJAX endpoint (`jsonplaceholder.typicode.com`) is a free **testing** service that echoes the request and **stores nothing**, so no one receives these submissions. See [Setup and configuration](#setup-and-configuration) to connect a real form service.
 
-## Technologies Used
-- HTML5 (semantic elements: `header`, `nav`, `main`, `section`, `article`, `footer`)
-- CSS3 (Grid, Flexbox, custom properties, media queries, pseudo-classes, gradients)
-- Google Fonts (Sora, Source Sans 3)
-- Minimal JavaScript (footer year, active nav-link highlighting)
+---
 
-## How to View the Website
-Open `index.html` in any modern web browser (with an internet connection, so Google Fonts and Google Maps load). All internal links use relative paths, so the whole `AkhonaTeens_Website` folder should be kept together.
+## SEO
+
+### On-page SEO
+
+| Technique | Implementation |
+|---|---|
+| **Keyword research** | Primary phrases: *teen leadership programme*, *youth development NPO South Africa*, *Kempton Park*, *Gauteng*, *Mpumalanga*, *teenage entrepreneurship*, *financial literacy for teens*, *volunteer / mentor*, *dignity packs*. Chosen from how parents, volunteers, schools and donors would search, and placed in titles, headings, body text, alt text and links. |
+| **Title tags** | Unique on every page, 44–61 characters, keyword first, brand last. |
+| **Meta descriptions** | Unique, about 150–160 characters, written as a call to action. |
+| **Meta keywords** | Page-specific list on every page (included for completeness; major search engines no longer use them). |
+| **Header tags** | Exactly one `<h1>` per page, logical `<h2>`/`<h3>` order (verified automatically). |
+| **Image optimisation** | Descriptive file names (`teen-leadership-workshop-gauteng.jpg`), specific alt text, `width`/`height`, WebP + JPEG, `srcset`/`sizes`, lazy loading. |
+| **URL structure** | Short, lowercase, hyphenated, descriptive (`services.html`, `events.html`); canonical URL on every page. |
+| **Internal linking** | Descriptive anchor text, breadcrumbs, footer links, deep links such as `services.html?q=leadership` and `enquiry.html?type=sponsor`. |
+| **Mobile-friendliness** | Responsive layout, viewport meta tag, hamburger menu, full-width buttons on phones, no horizontal scrolling at 375px. |
+| **Structured data** | JSON-LD: `NGO` (address, geo, hours, social profiles), `BreadcrumbList`, `FAQPage`. |
+| **Social previews** | Open Graph and Twitter Card tags with a page-specific image and alt text. |
+| **Accessibility (helps SEO)** | Landmarks, skip link, ARIA patterns, visible focus, colour contrast, `lang="en-ZA"`. |
+
+### Off-page SEO (plan and what is built in)
+
+Off-page work happens outside the site; the site is built to support it.
+
+| Area | Action plan | Supported in the site |
+|---|---|---|
+| **Backlinks** | Ask partner schools, churches and The Character Company to link to the site; list the NPO on South African non-profit directories, local Kempton Park business and community pages, and volunteer-matching sites; publish event write-ups that local news and school newsletters can link to. | Press-ready events and gallery pages, partner page text, outbound link to a real partner. |
+| **Social media** | Post every event and campaign to Facebook, Instagram, LinkedIn and X with a link back to the matching page. | Social profile links, share buttons (WhatsApp, Facebook, X), Open Graph/Twitter cards so shared links show a title, description and image. |
+| **Local SEO** | Claim and verify a Google Business Profile for the Kempton Park head office; keep the name, address and phone number (NAP) identical on every listing; ask volunteers and parents for reviews. | Kempton Park and Hluvukani in titles and headings, `NGO` structured data with geo coordinates, NAP identical in the footer, contact page and JSON-LD, interactive map. |
+
+### Additional SEO requests
+
+| Item | File / approach |
+|---|---|
+| **robots.txt** | `robots.txt`: allows crawling, blocks `404.html` and the vendor folder, links to the sitemap. |
+| **sitemap.xml** | `sitemap.xml`: all eight indexable pages with priority, change frequency and last-modified date. |
+| **Page speed** | WebP images, `srcset`, lazy loading, `fetchpriority="high"` on the hero, deferred scripts, `preconnect` to fonts, Leaflet only loaded on the contact page, cache headers in `_headers`, no large libraries or frameworks. |
+| **Security** | See the next section. |
+
+---
+
+## Security
+
+| Measure | Detail |
+|---|---|
+| Content-Security-Policy | Meta tag on every page (and in `_headers`): scripts may only come from the site itself; no inline scripts. |
+| No third-party script CDN | Leaflet is stored locally (`js/vendor/`), so a compromised CDN cannot inject code. |
+| Safe output | All visitor text is inserted with `textContent`, never `innerHTML`, so it cannot inject HTML. Verified with a test that a `<img onerror=…>` name is rejected and nothing runs. |
+| Input validation | Formats, lengths and ranges checked in the browser; `maxlength` limits on every field. Server-side validation would be required for any real back end. |
+| Bot protection | Hidden honeypot field; submit button disabled while a request is running. |
+| External links | `rel="noopener noreferrer"` on every link that opens a new tab. |
+| Privacy | Geolocation is requested only when the visitor clicks "Find my nearest" and is never sent anywhere; POPIA consent checkbox on both forms. |
+| Headers | `_headers` adds `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy` and HSTS on hosts that read it (Netlify, Cloudflare Pages). GitHub Pages ignores this file, but the CSP and referrer policy still apply through the `<meta>` tags. |
+| HTTPS | Provided automatically by GitHub Pages and Netlify. |
+
+---
+
+## Responsive design and screenshot evidence
+
+Layout uses CSS Grid and Flexbox with three ranges: **desktop**, **tablet (≤ 900px)** and **mobile (≤ 600px)**. Navigation collapses into a hamburger menu at 900px; multi-column grids reduce to two then one column; typography scales; images use `srcset`/`sizes` and `<picture>` with WebP.
+
+Pages were captured at desktop (1440×900), tablet (768×1024) and mobile (375×812) in a real browser engine, and an automated check confirmed that **no page scrolls horizontally at any size**.
+
+| Page | Desktop | Tablet | Mobile |
+|---|---|---|---|
+| Home | [view](images/screenshots/responsive/index-desktop.jpg) | [view](images/screenshots/responsive/index-tablet.jpg) | [view](images/screenshots/responsive/index-mobile.jpg) |
+| About | [view](images/screenshots/responsive/about-desktop.jpg) | [view](images/screenshots/responsive/about-tablet.jpg) | [view](images/screenshots/responsive/about-mobile.jpg) |
+| Services | [view](images/screenshots/responsive/services-desktop.jpg) | [view](images/screenshots/responsive/services-tablet.jpg) | [view](images/screenshots/responsive/services-mobile.jpg) |
+| Events | [view](images/screenshots/responsive/events-desktop.jpg) | [view](images/screenshots/responsive/events-tablet.jpg) | [view](images/screenshots/responsive/events-mobile.jpg) |
+| Gallery | [view](images/screenshots/responsive/gallery-desktop.jpg) | [view](images/screenshots/responsive/gallery-tablet.jpg) | [view](images/screenshots/responsive/gallery-mobile.jpg) |
+| Enquiry | [view](images/screenshots/responsive/enquiry-desktop.jpg) | [view](images/screenshots/responsive/enquiry-tablet.jpg) | [view](images/screenshots/responsive/enquiry-mobile.jpg) |
+| Contact | [view](images/screenshots/responsive/contact-desktop.jpg) | [view](images/screenshots/responsive/contact-tablet.jpg) | [view](images/screenshots/responsive/contact-mobile.jpg) |
+
+| Desktop | Tablet | Mobile |
+|---|---|---|
+| ![Home desktop](images/screenshots/responsive/index-desktop.jpg) | ![Home tablet](images/screenshots/responsive/index-tablet.jpg) | ![Home mobile](images/screenshots/responsive/index-mobile.jpg) |
+
+> The screenshots were captured in an environment that blocks Google Fonts and map tiles, so text appears in the fallback system font and maps show a plain background. Online, the Sora and Source Sans 3 fonts and the OpenStreetMap tiles load normally.
+
+---
+
+## Testing
+
+| What | Result |
+|---|---|
+| Functional tests in a headless Chromium browser (navigation, counters, reveal, tabs, accordion, modals, search/filter/sort, URL state, `.ics` download, lightbox, map, geolocation, both forms, validation, AJAX success and failure, XSS attempt, honeypot) | About 140 checks, all passing |
+| JavaScript disabled | Content, navigation and forms remain usable |
+| Static audit of all pages (titles, descriptions, keywords, canonical, Open Graph, one `<h1>`, heading order, duplicate ids, alt text, image dimensions, inline styles, broken links, external-link safety) | 0 problems |
+| Horizontal overflow at 1440 / 768 / 375 px | None on any page |
+| Console errors and CSP violations when opened from disk | None |
+
+**Cross-browser note:** the automated tests ran in Chromium (the engine behind Chrome and Edge). The features used (`<dialog>`, CSS Grid, `fetch`, IntersectionObserver, `<picture>`) are supported by current Chrome, Edge, Firefox and Safari. Please also open the site in Firefox and Safari (or on a phone) before submission and note anything unusual in the changelog.
+
+---
+
+## Setup and configuration
+
+**View locally:** unzip the folder and double-click `index.html`. Keep the folders together. An internet connection is needed for fonts and map tiles.
+
+**Form settings: `js/config.js`**
+
+```js
+recipientEmail: "info@akhonateens.co.za",   // who compiled emails are addressed to
+ajaxEndpoint:   "https://jsonplaceholder.typicode.com/posts",  // test service; "" turns AJAX off
+costs: { dignityPack: 85, academySeat: 1200, hubMonth: 3500 }  // used in sponsorship responses
+```
+
+- While testing, change `recipientEmail` to **your own address** so test emails do not go to the organisation.
+- For real delivery without a server, replace `ajaxEndpoint` with a form service such as `https://formsubmit.co/ajax/your-address@example.com` (it asks you to confirm the address once). The Content-Security-Policy tag in each page already allows `formsubmit.co`; for any other service, add its address to `connect-src` in the `<head>` of `enquiry.html` and `contact.html` (and in `_headers`).
+
+**Content:** programmes, events and locations live in `js/data.js`. Add an object to the `events` array and it appears on the Events page and, when it is among the next three, on the home page.
+
+**Set the live URL:** canonical links, social-sharing tags, `sitemap.xml` and `robots.txt` contain the placeholder `https://YOUR-USERNAME.github.io/akhona-teens-website`. After you know your real address, use *Find and Replace in Files* (VS Code: `Ctrl+Shift+H`) to replace that text with your real URL in all files.
+
+---
+
+## Deployment
+
+### GitHub Pages (free)
+1. Push the repository to GitHub (see below).
+2. On GitHub open **Settings → Pages**.
+3. Under **Build and deployment** choose **Deploy from a branch**, select **main** and folder **/ (root)**, then **Save**.
+4. After a minute the site is live at `https://YOUR-USERNAME.github.io/REPOSITORY-NAME/`.
+5. Replace the placeholder URL (previous section), commit and push.
+6. Open every page on the live site to confirm there are no errors.
+
+### Netlify (alternative)
+Drag the project folder onto https://app.netlify.com/drop. Netlify reads `_headers` automatically and applies the security headers.
+
+### After deploying
+- Submit `/sitemap.xml` in Google Search Console.
+- Run the live URL through a page-speed and an accessibility checker.
+- Add the live link to the table at the top of this README and submit it with the GitHub repository link.
+
+---
+
+## Git workflow
+
+Commits are small, in logical steps, with messages that describe the change (for example *"Add gallery lightbox: category filter, keyboard/swipe navigation, zoom, focus return"*). View them with `git log --oneline`.
+
+```
+git add .
+git commit -m "Describe what changed and why"
+git push
+```
+
+---
+
+## Content sources
+
+1. **Organisation material:** logo, campaign posters, banner and photographs from the supplied `Research` folder (the organisation's public social media).
+2. **Public information:** the organisation's public profile and partner information.
+3. **Original content:** page copy, programme and event details, team profiles, timeline, sponsorship figures and FAQs were written for this project. Names, schedules, prices and statistics not found in the research are illustrative.
+4. **Free resources:** OpenStreetMap map data, Leaflet library, Google Fonts (see references).
+
+---
 
 ## References
-- Akhona Teens Leadership Foundation — publicly available organisational information and campaign material (logos, posters and photographs supplied via the project's `Research` folder).
-- Google Fonts: Sora — https://fonts.google.com/specimen/Sora
-- Google Fonts: Source Sans 3 — https://fonts.google.com/specimen/Source+Sans+3
-- Google Maps Embed (no API key) — https://www.google.com/maps
 
-See `CHANGELOG.md` for a record of development steps.
+Agafonkin, V. (2023) *Leaflet: an open-source JavaScript library for mobile-friendly interactive maps* (version 1.9.4). Available at: https://leafletjs.com/ .
+
+Akhona Teens Leadership Foundation (2026) *Logo, campaign posters and photographs* [images supplied in the project's Research folder, from the organisation's public social media].
+
+Google (2026) *Google Fonts: Sora* and *Source Sans 3*. Available at: https://fonts.google.com/ .
+
+Google Search Central (2026) *SEO starter guide*. Available at: https://developers.google.com/search/docs/fundamentals/seo-starter-guide.
+
+JSONPlaceholder (2026) *Free fake and reliable API for testing and prototyping*. Available at: https://jsonplaceholder.typicode.com/.
+
+Mozilla (2026a) *The Dialog element*. MDN Web Docs. Available at: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog.
+
+Mozilla (2026b) *Intersection Observer API*. MDN Web Docs. Available at: https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API (Accessed: 28 October 2026).
+
+Mozilla (2026c) *Fetch API*. MDN Web Docs. Available at: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API.
+
+Mozilla (2026d) *Geolocation API*. MDN Web Docs. Available at: https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API.
+
+Mozilla (2026e) *The Picture element*. MDN Web Docs. Available at: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture.
+
+OpenStreetMap contributors (2026) *OpenStreetMap*. Available at: https://www.openstreetmap.org/copyright.
+
+Republic of South Africa (2013) *Protection of Personal Information Act 4 of 2013*. Pretoria: Government Printer.
+
+Schema.org (2026) *NGO*. Available at: https://schema.org/NGO.
+
+Sinnott, R.W. (1984) 'Virtues of the haversine', *Sky and Telescope*, 68(2), p. 159.
+
+Sitemaps.org (2026) *Sitemaps XML format*. Available at: https://www.sitemaps.org/protocol.html.
+
+The Character Company (n.d.) *Programme partners*. Available at: https://www.thecharactercompany.co.za/program-partner.
+
+W3C (2023) *Web Content Accessibility Guidelines (WCAG) 2.2*. Available at: https://www.w3.org/TR/WCAG22/.
+
+W3C (2026) *WAI-ARIA Authoring Practices Guide: Tabs, Accordion and Dialog (Modal) patterns*. Available at: https://www.w3.org/WAI/ARIA/apg/patterns/ .
+
+Wikipedia (2026) *Hluvukani*. Available at: https://en.wikipedia.org/wiki/Hluvukani 

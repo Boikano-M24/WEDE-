@@ -1,29 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ZA">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sitemap | Akhona Teens Leadership Foundation</title>
 
+<!-- SEO: description, keywords, robots, canonical -->
+<meta name="description" content="A complete overview of the Akhona Teens website: every page, how they connect and where to find programmes, events, the gallery, enquiries and contact details.">
+<meta name="keywords" content="Akhona Teens sitemap, site map, website structure">
+<meta name="author" content="Akhona Teens Leadership Foundation">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://YOUR-USERNAME.github.io/akhona-teens-website/sitemap.html">
+<meta name="theme-color" content="#4A2E83">
+
+<!-- Security: content-security policy + referrer policy -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://tile.openstreetmap.org https://*.tile.openstreetmap.org; connect-src 'self' https://jsonplaceholder.typicode.com https://formsubmit.co; object-src 'none'; base-uri 'self'; form-action 'self' mailto:">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<!-- Social sharing (Open Graph + Twitter cards) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Akhona Teens Leadership Foundation">
+<meta property="og:locale" content="en_ZA">
+<meta property="og:title" content="Sitemap | Akhona Teens Leadership Foundation">
+<meta property="og:description" content="A complete overview of the Akhona Teens website: every page, how they connect and where to find programmes, events, the gallery, enquiries and contact details.">
+<meta property="og:url" content="https://YOUR-USERNAME.github.io/akhona-teens-website/sitemap.html">
+<meta property="og:image" content="https://YOUR-USERNAME.github.io/akhona-teens-website/images/teen-leadership-coaching-banner-1200w.jpg">
+<meta property="og:image:alt" content="Akhona Teens banner: it&#x27;s time for the future to lead - leadership coaching for teens">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sitemap | Akhona Teens Leadership Foundation">
+<meta name="twitter:description" content="A complete overview of the Akhona Teens website: every page, how they connect and where to find programmes, events, the gallery, enquiries and contact details.">
+<meta name="twitter:image" content="https://YOUR-USERNAME.github.io/akhona-teens-website/images/teen-leadership-coaching-banner-1200w.jpg">
+
+<!-- Icons -->
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<!-- Fonts + stylesheet -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+
+<!-- Adds a "js" class immediately so CSS can tell JavaScript is available -->
+<script src="js/init.js"></script>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://YOUR-USERNAME.github.io/akhona-teens-website/"},{"@type":"ListItem","position":2,"name":"Sitemap","item":"https://YOUR-USERNAME.github.io/akhona-teens-website/sitemap.html"}]}</script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to main content</a>
 
 <!-- ============ HEADER ============ -->
-<header class="site-header">
+<header class="site-header" id="top">
     <div class="wrap">
         <a class="brand" href="index.html">
-            <img src="images/logo-square.jpg" alt="Akhona Teens Leadership Foundation logo">
-            <span class="brand-text">Akhona Teens<span>Leadership Foundation</span></span>
+            <img src="images/akhona-teens-logo-header.jpg" width="104" height="48" alt="Akhona Teens Leadership Foundation logo">
         </a>
-        <nav class="site-nav" aria-label="Main navigation">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+            <span class="nav-toggle-bars" aria-hidden="true"></span>
+            <span>Menu</span>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Main navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="services.html">Services</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="enquiry.html">Enquiry</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
@@ -31,66 +74,127 @@
     </div>
 </header>
 
+<!-- ============ PAGE HERO ============ -->
+<div class="page-hero">
+    <div class="wrap hero-intro">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li><span aria-current="page">Sitemap</span></li>
+            </ol>
+        </nav>
+        <span class="eyebrow eyebrow--light">Sitemap</span>
+        <h1>Website sitemap</h1>
+        <p class="lede">A complete overview of every page on the Akhona Teens website.</p>
+    </div>
+</div>
+
 <!-- ============ MAIN CONTENT ============ -->
-<main>
-    <section class="section">
+<main id="main" tabindex="-1">
+
+    <section class="section" aria-labelledby="tree-heading">
         <div class="wrap">
-            <span class="eyebrow">Site Structure</span>
-            <h1 style="font-size: var(--step-3);">Website Sitemap</h1>
-            <p>The diagram below shows how the pages of this website relate to one another. All secondary pages are reached directly from the Home page navigation menu, and every page shares the same navigation menu and footer.</p>
-
-            <div class="tree" style="margin-top: var(--space-lg);">
-                <div class="tree-root">index.html<br><small style="font-weight:400;">Home Page</small></div>
-                <div class="tree-branch">&#8595;</div>
-                <div class="tree-children">
-                    <a href="about.html">about.html</a>
-                    <a href="services.html">services.html</a>
-                    <a href="enquiry.html">enquiry.html</a>
-                    <a href="contact.html">contact.html</a>
-                    <a href="sitemap.html">sitemap.html</a>
-                </div>
-            </div>
-
-            <h2 style="margin-top: var(--space-xl);">Page Descriptions</h2>
-            <div class="grid grid--3">
-                <div class="card">
-                    <h3>index.html</h3>
-                    <p>Homepage: hero image, brief introduction to Akhona Teens, impact stats, and calls to action linking to the other pages.</p>
-                </div>
-                <div class="card">
-                    <h3>about.html</h3>
-                    <p>Organisation history, founder profile, team members, mission and vision.</p>
-                </div>
-                <div class="card">
-                    <h3>services.html</h3>
-                    <p>Detailed information about Akhona Teens' programmes and community initiatives.</p>
-                </div>
-                <div class="card">
-                    <h3>enquiry.html</h3>
-                    <p>Enquiry form for volunteering, mentoring, partnering or sponsoring the Foundation.</p>
-                </div>
-                <div class="card">
-                    <h3>contact.html</h3>
-                    <p>Contact details, embedded maps for two locations, and a general contact form.</p>
-                </div>
-                <div class="card">
-                    <h3>sitemap.html</h3>
-                    <p>This page &ndash; a visual overview of the website structure (supporting page, not part of the main navigation menu).</p>
-                </div>
+            <h2 id="tree-heading">Site structure</h2>
+            <p>Every page is one click from the home page and shares the same navigation menu and footer. Supporting files for search engines are <a class="text-link" href="sitemap.xml">sitemap.xml</a> and <a class="text-link" href="robots.txt">robots.txt</a>.</p>
+            <div class="tree mt-md">
+                <div class="tree-root">index.html<br><small>Home</small></div>
+                <div class="tree-branch" aria-hidden="true">&darr;</div>
+                <div class="tree-children"><a href="about.html">about.html</a><a href="services.html">services.html</a><a href="events.html">events.html</a><a href="gallery.html">gallery.html</a><a href="enquiry.html">enquiry.html</a><a href="contact.html">contact.html</a></div>
             </div>
         </div>
     </section>
+
+    <section class="section section--alt" aria-labelledby="pages-heading">
+        <div class="wrap">
+            <h2 id="pages-heading">What is on each page</h2>
+            <div class="grid grid--3">
+
+                <article class="card reveal d0">
+                    <h3><a class="text-link" href="index.html">index.html</a></h3>
+                    <p>Hero banner, introduction, impact counters, upcoming events (loaded dynamically) and calls to action.</p>
+                </article>
+                <article class="card reveal d1">
+                    <h3><a class="text-link" href="about.html">about.html</a></h3>
+                    <p>Our story, timeline, mission/vision/values tabs and team profiles with pop-up bios.</p>
+                </article>
+                <article class="card reveal d2">
+                    <h3><a class="text-link" href="services.html">services.html</a></h3>
+                    <p>Searchable, filterable and sortable list of programmes and community initiatives.</p>
+                </article>
+                <article class="card reveal d0">
+                    <h3><a class="text-link" href="events.html">events.html</a></h3>
+                    <p>Upcoming and past events with search, filters, sorting and add-to-calendar.</p>
+                </article>
+                <article class="card reveal d1">
+                    <h3><a class="text-link" href="gallery.html">gallery.html</a></h3>
+                    <p>Photo gallery with category filters and a lightbox viewer.</p>
+                </article>
+                <article class="card reveal d2">
+                    <h3><a class="text-link" href="enquiry.html">enquiry.html</a></h3>
+                    <p>Adaptive enquiry form (enrol, volunteer, mentor, sponsor, partner) with instant response, plus FAQ accordion.</p>
+                </article>
+                <article class="card reveal d0">
+                    <h3><a class="text-link" href="contact.html">contact.html</a></h3>
+                    <p>Contact details, interactive Leaflet map with two locations and a validated message form that compiles an email.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
 </main>
 
 <!-- ============ FOOTER ============ -->
 <footer class="site-footer">
     <div class="wrap">
+        <div class="footer-grid">
+            <div>
+                <h2>Akhona Teens Leadership Foundation</h2>
+                <p>Equipping teenagers with the personal, leadership, financial and entrepreneurial skills to build meaningful futures.</p>
+                <p><a href="mailto:info@akhonateens.co.za">info@akhonateens.co.za</a><br><a href="tel:+27119724456">011 972 4456</a></p>
+            </div>
+            <div>
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Programmes &amp; Services</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="gallery.html">Photo Gallery</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Get involved</h3>
+                <ul>
+                    <li><a href="enquiry.html?type=volunteer">Volunteer</a></li>
+                    <li><a href="enquiry.html?type=mentor">Become a mentor</a></li>
+                    <li><a href="enquiry.html?type=sponsor">Sponsor or donate</a></li>
+                    <li><a href="enquiry.html?type=partner">Partner with us</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Follow &amp; share</h3>
+                <ul>
+                    <li><a href="https://www.facebook.com/akhonateens" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/akhonateens" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://www.linkedin.com/company/akhona-teens-leadership-foundation" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                    <li><a href="https://x.com/akhonateens" target="_blank" rel="noopener noreferrer">X (Twitter)</a></li>
+                </ul>
+                <p class="visually-hidden" id="share-label">Share this website</p>
+                <ul aria-labelledby="share-label">
+                    <li><a data-share="whatsapp" href="https://wa.me/?text=Check%20out%20Akhona%20Teens%20Leadership%20Foundation%20-%20free%20teen%20leadership%20programmes%20in%20Gauteng%20%26%20Mpumalanga%20https%3A//YOUR-USERNAME.github.io/akhona-teens-website/" target="_blank" rel="noopener noreferrer">Share on WhatsApp</a></li>
+                    <li><a data-share="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A//YOUR-USERNAME.github.io/akhona-teens-website/" target="_blank" rel="noopener noreferrer">Share on Facebook</a></li>
+                    <li><a data-share="x" href="https://twitter.com/intent/tweet?url=https%3A//YOUR-USERNAME.github.io/akhona-teens-website/&amp;text=Check%20out%20Akhona%20Teens%20Leadership%20Foundation%20-%20free%20teen%20leadership%20programmes%20in%20Gauteng%20%26%20Mpumalanga" target="_blank" rel="noopener noreferrer">Share on X</a></li>
+                </ul>
+            </div>
+        </div>
         <div class="footer-bottom">
-            &copy; <span id="current-year">2026</span> Akhona Teens Leadership Foundation. All rights reserved.
+            &copy; <span id="current-year">2026</span> Akhona Teens Leadership Foundation. Registered non-profit organisation, South Africa.
         </div>
     </div>
 </footer>
 
-<script src="js/script.js"></script>
+<button class="back-to-top" type="button" aria-label="Back to top">&uarr;</button>
+<script src="js/main.js" defer></script>
 </body>
 </html>
